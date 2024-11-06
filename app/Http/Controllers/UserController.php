@@ -29,10 +29,6 @@ class UserController extends Controller
     ]);
         $users = User::all(); 
         return view('dashboard', compact(var_name: 'users')); 
-
-        // return redirect()->route('dashboard')->with('success', 'User  created successfully.');
-
-    // return redirect()->route('/login')->with('success', 'User  created successfully.');
 }
 
     public function edit($id)
@@ -52,7 +48,6 @@ class UserController extends Controller
         $user->update($request->all());
          $users = User::all(); 
         return view('dashboard', compact(var_name: 'users')); 
-        // return redirect()->route('dashboard')->with('success', 'User  updated successfully.');
     }
 
     public function destroy($id)
@@ -60,6 +55,5 @@ class UserController extends Controller
         User::destroy($id);
          $users = User::all(); 
         return view('dashboard', compact(var_name: 'users')); 
-        // return redirect()->route('dashboard')->with('success', 'User  deleted successfully.');
     }
 }
