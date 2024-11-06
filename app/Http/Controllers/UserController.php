@@ -27,8 +27,12 @@ class UserController extends Controller
         'email' => $request->email,
         'password' => Hash::make("12345"), 
     ]);
+        $users = User::all(); 
+        return view('dashboard', compact(var_name: 'users')); 
 
-    return redirect()->route('dashboard')->with('success', 'User  created successfully.');
+        // return redirect()->route('dashboard')->with('success', 'User  created successfully.');
+
+    // return redirect()->route('/login')->with('success', 'User  created successfully.');
 }
 
     public function edit($id)
@@ -46,12 +50,16 @@ class UserController extends Controller
 
         $user = User::find($id);
         $user->update($request->all());
-        return redirect()->route('dashboard')->with('success', 'User  updated successfully.');
+         $users = User::all(); 
+        return view('dashboard', compact(var_name: 'users')); 
+        // return redirect()->route('dashboard')->with('success', 'User  updated successfully.');
     }
 
     public function destroy($id)
     {
         User::destroy($id);
-        return redirect()->route('dashboard')->with('success', 'User  deleted successfully.');
+         $users = User::all(); 
+        return view('dashboard', compact(var_name: 'users')); 
+        // return redirect()->route('dashboard')->with('success', 'User  deleted successfully.');
     }
 }

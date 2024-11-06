@@ -1,0 +1,88 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 50px;
+}
+
+h2 {
+    color: #333;
+    text-align: center;
+}
+
+.container {
+    max-width: 400px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.error-message {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 10px;
+    border: 1px solid #f5c6cb;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 600px) {
+    body {
+        padding: 20px; /* Kurangi padding untuk layar kecil */
+    }
+
+    .container {
+        padding: 15px; /* Kurangi padding dalam container */
+    }
+
+    h2 {
+        font-size: 1.5em; /* Sesuaikan ukuran font untuk judul */
+    }
+
+    button {
+        padding: 8px; /* Sesuaikan padding tombol */
+    }
+
+    input[type="email"],
+    input[type="password"] {
+        padding: 8px; /* Sesuaikan padding input */
+    }
+}
+
+@media (max-width: 400px) {
+    .container {
+        max-width: 90%; /* Lebar maksimum container untuk layar sangat kecil */
+    }
+}

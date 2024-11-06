@@ -21,8 +21,7 @@ class LoginController extends Controller
         ]);
 
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
-            // Jika login berhasil, redirect ke halaman yang diinginkan
-                $users = User::all(); // Mengambil semua data pengguna dari database
+                $users = User::all(); 
 
             return view('/dashboard',['users'=> $users]);
         }
