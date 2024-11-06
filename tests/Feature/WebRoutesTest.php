@@ -16,10 +16,6 @@ class WebRoutesTest extends TestCase
         $response->assertStatus(200);
     }
 
-    /** @test */
-
-    /** @test */
-
 
     /** @test */
     public function it_generates_pdf()
@@ -29,7 +25,6 @@ class WebRoutesTest extends TestCase
         $this->assertEquals('ganteng', $response->getContent());
     }
 
-    /** @test */
     /** @test */
     public function it_creates_a_user()
     {
@@ -58,7 +53,6 @@ class WebRoutesTest extends TestCase
         $response->assertStatus(200);
     }
 
-    /** @test */
  
 
     /** @test */
