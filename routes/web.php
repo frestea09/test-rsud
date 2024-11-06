@@ -36,7 +36,7 @@ Route::post('/generate-pdf', function(){
     return"ganteng";
 })->name('generate.pdf');
 
-Route::get('/dashboard', [ UserController::class, 'index'])->name('dashboard');
+Route::get('/dashboard',  [LoginController::class, 'login'])->name('dashboard');
 Route::post('/users', action: [UserController::class, 'store'])->name('users.store');
 Route::get(uri : '/users/{id}/edit', action :[ UserController::class, 'edit'])->name('users.edit');
 Route::put('/users/{id}', [ UserController::class, 'update'])->name('users.update');

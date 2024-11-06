@@ -26,7 +26,7 @@
             margin-bottom: 5px;
             font-weight: bold;
         }
-        input[type="text"], input[type="email"] {
+        input[type="text"], input[type="email"], input[type="password"] {
             width: 100%;
             padding: 10px;
             margin-bottom: 10px;
@@ -86,6 +86,9 @@
 
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
 
         <button type="submit">Tambah User</button>
 
