@@ -81,23 +81,19 @@ function generatePDF(id, name, email) {
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF();
 
-    // Menambahkan header
-    doc.setFontSize(12);
+   doc.setFontSize(12);
     doc.text('PEMERINTAH KABUPATEN BANDUNG', 10, 10);
     doc.setFontSize(10);
-    doc.text('DINAS XYZ', 10, 15); // Ganti dengan nama dinas yang sesuai
-    doc.text('Alamat: Jl. Contoh No. 123, Bandung', 10, 20); // Ganti dengan alamat yang sesuai
-    doc.text('Telepon: (022) 1234567', 10, 25); // Ganti dengan nomor telepon yang sesuai
-    doc.line(10, 27, 200, 27); // Garis horizontal
+    doc.text('DINAS XYZ', 10, 15); 
+    doc.text('Alamat: Jl. Contoh No. 123, Bandung', 10, 20); 
+    doc.text('Telepon: (022) 1234567', 10, 25); 
+    doc.line(10, 27, 200, 27); 
 
-    // Menambahkan judul surat
     doc.setFontSize(14);
     doc.text('SURAT PERINTAH', 10, 35);
     doc.setFontSize(12);
-    doc.text('Nomor: 123/XYZ/2023', 10, 40); // Ganti dengan nomor surat yang sesuai
-    doc.line(10, 42, 200, 42); // Garis horizontal
-
-    // Menambahkan isi surat
+    doc.text('Nomor: 123/XYZ/2023', 10, 40); 
+    doc.line(10, 42, 200, 42);
     doc.setFontSize(12);
     doc.text('Dengan ini, kami memberitahukan bahwa:', 10, 50);
     doc.text(`Nama: ${name}`, 10, 60);
@@ -105,13 +101,11 @@ function generatePDF(id, name, email) {
     doc.text(`ID Pengguna: ${id}`, 10, 70);
     doc.text('adalah pengguna yang terdaftar.', 10, 75);
 
-    // Menambahkan footer
     doc.setFontSize(10);
-    doc.text('Bandung, ' + new Date().toLocaleDateString(), 10, 90); // Tanggal saat ini
-    doc.text('Kepala Dinas XYZ', 10, 95); // Ganti dengan nama kepala dinas
-    doc.text('_____________________', 10, 100); // Garis untuk tanda tangan
+    doc.text('Bandung, ' + new Date().toLocaleDateString(), 10, 90); 
+    doc.text('Kepala Dinas XYZ', 10, 95); 
+    doc.text('_____________________', 10, 100);
 
-    // Menyimpan PDF
     doc.save(`user_${id}.pdf`);
 }
     </script>
