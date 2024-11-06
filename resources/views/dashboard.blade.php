@@ -71,6 +71,7 @@
             margin-bottom: 20px;
         }
     </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
 </head>
 <body>
     <h2>Dashboard</h2>
@@ -89,14 +90,14 @@
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" required>
 
-
         <button type="submit">Tambah User</button>
-
     </form>
-      <form action="{{ route('logout') }}" method="POST" style="display:inline;">
-    @csrf
-    <button type="submit" style="background-color: red; color: white; border: none; padding: 10px 20px; cursor: pointer;">Logout</button>
-</form>
+
+    <form action="{{ route('logout') }}" method="POST" style="display:inline;">
+        @csrf
+        <button type="submit" style="background-color: red; color: white; border: none; padding: 10px 20px; cursor: pointer;">Logout</button>
+    </form>
+
     <h3>Daftar Pengguna</h3>
     <table>
         <thead>
@@ -115,6 +116,7 @@
                     <td>{{ $user->email }}</td>
                     <td>
                         <button onclick="editUser ({{ $user->id }})">Edit</button>
+                                                <button onclick="generatePDF({{ $user->id }}, '{{ $user->name }}', '{{ $user->email }}')">Print PDF</button>
                         <form action="{{ route('users.destroy', $user->id) }}" method="POST" style="display:inline;">
                             @csrf
                             @method('DELETE')
@@ -144,6 +146,17 @@
                     input.value = 'PUT';
                     document.querySelector('form').appendChild(input);
                 });
+        }
+
+        function generatePDF(id, name, email) {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+
+            doc.text(`User  ID: ${id}`, 10, 10);
+            doc.text(`Name: ${name}`, 10, 20);
+            doc.text(`Email: ${email}`, 10, 30);
+
+            doc.save(`user_${id}.pdf`);
         }
     </script>
 </body>
